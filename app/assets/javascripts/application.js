@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
+//= require redactor-rails
 //= require turbolinks
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
