@@ -16,4 +16,6 @@
 !/log/.keep
 /tmp
 
+public/uploads/*
+
 .ruby-version

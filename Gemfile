@@ -36,14 +36,20 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
-gem 'foundation-rails'
-gem 'redactor-rails'
 gem 'omniauth-meetup'
 gem 'rMeetup'
+
+gem 'foundation-rails'
+gem 'redactor-rails'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.4'
+  gem 'rspec-collection_matchers'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -52,4 +58,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'guard-rspec', require: false
+end
+
+group :test do
+  gem 'database_cleaner'
 end
