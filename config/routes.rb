@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
+  root 'dashboard#index'
   resources :posts
   mount RedactorRails::Engine => '/redactor_rails'
   # The priority is based upon order of creation: first created -> highest priority.

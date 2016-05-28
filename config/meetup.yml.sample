@@ -1,0 +1,11 @@
+test:
+  api_key: YOUR_API_KEY
+  group_id: YOUR_GROUP_ID
+
+development:
+  api_key: YOUR_API_KEY
+  group_id: YOUR_GROUP_ID
+
+production:
+  api_key: YOUR_API_KEY
+  group_id: YOUR_GROUP_ID

@@ -2,8 +2,7 @@
 <% flash.each do |key, value| %>
   <div class='callout <%= key == 'notice' ? 'primary' : key == 'alert' ? 'alert' : 'secondary' %>' data-closable >
     <p><%= value %></p>
-    <button class='close-button' aria-label='Dismiss alert' type='button' data-close>&nbsp;
-    </button>
+    <a class='close-button' aria-label='Dismiss alert' type='button' data-close>&nbsp;</a>
   </div>
 <% end %>
 </div>

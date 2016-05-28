@@ -18,4 +18,8 @@
 
 public/uploads/*
 
+config/database.yml
+config/meetup.yml
+
 .ruby-version
+.DS_Store

@@ -1,0 +1,33 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'imports/fonts';
+
+header {
+  $bg-color: #dd6666;
+  height: 50%;
+  background-color: $bg-color;
+  text-align: center;
+  // background-image: image-url('rail_track');
+  // background-size: 5%;
+  // background-position: bottom;
+  // background-repeat-y: no-repeat;
+
+  #header-image {
+    height: calc(100% - 4rem);
+    width: auto;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 1px solid darken($bg-color, 5%);
+    background-color: lighten($bg-color, 5%);
+  }
+
+  #header-title {
+    font-family: $default-font-header-sans, Arial;
+    font-size: 4em;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
