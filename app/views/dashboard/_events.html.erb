@@ -37,7 +37,7 @@
             <h5>Resources</h5>
             <ul>
               <% meetup_past_event.links.each do |link| %>
-                <li><%= link_to link, target: :_blank %></li>
+                <li><%= link_to link, link, target: :_blank %></li>
               <% end %>
             </ul>
           <% end %>
