@@ -1,7 +1,9 @@
 class DashboardController < ApplicationController
-  # before_action :synchronise_events, only: :index
-  # before_action :set_events, only: :index
-  # before_action :set_posts, only: :index
+  before_action :synchronise_events, only: :index
+  before_action :set_events, only: :index
+  before_action :set_event_photos, only: :index
+  before_action :set_members, only: :index
+  before_action :set_posts, only: :index
 
   def index
     render layout: 'dashboard'
@@ -28,6 +30,18 @@ class DashboardController < ApplicationController
   def set_events
     @meetup_upcoming_events = Event.where('raw_data @> ?', {status: 'upcoming'}.to_json)
     @meetup_past_events = Event.where('raw_data @> ?', {status: 'past'}.to_json)
+  end
+
+  def set_event_photos
+    @meetup_event_photos = {}
+    (@meetup_upcoming_events + @meetup_past_events).each do |meetup_event|
+      meetup_event_id = meetup_event.raw_data['id']
+      @meetup_event_photos[meetup_event_id] = RMeetup_client.fetch(:photos, event_id: meetup_event_id)
+    end
+  end
+
+  def set_members
+    @meetup_members = RMeetup_client.fetch(:members, group_id: Rails.application.config.meetup_group_id).shuffle
   end
 
   def set_posts

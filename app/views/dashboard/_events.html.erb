@@ -1,14 +1,48 @@
 <section id='events-container' data-magellan-target='events-container'>
   <div class='medium-8 columns row'>
-    <p>
-      Learn Web Development using Ruby-on-Rails for free. Students, beginners, and professionals are all welcome. Study sessions will be casual, open, and unorthodox: should be efficient and fun! :3  
-    </p>
-    <ul>
-      <li>Motivate people to love and learn this awesome framework! :)</li>
-      <li>Make new friends! :)</li>
-      <li>Share and collaborate potential ideas</li>
-      <li>Opportunity to discuss emerging technologies</li>
-      <li>Personal motivation for my passion to teach, and to improve my English :3</li>
-    </ul>
+    <h2 class='show-for-small-only'>Events</h2>
+    <% if @meetup_upcoming_events.present? %>
+      <h3>Upcoming Events</h3>
+      <p>
+        Learn Web Development using Ruby-on-Rails for free. Students, beginners, and professionals are all welcome. Study sessions will be casual, open, and unorthodox: should be efficient and fun! :3  
+      </p>
+    <% end %>
+    <% if @meetup_past_events.present? %>
+      <h3>Past Events</h3>
+      <% @meetup_past_events.each do |meetup_past_event| %>
+        <article>
+          <h4><%= link_to meetup_past_event.raw_data['name'], meetup_past_event.raw_data['event_url'], target: :_blank %></h4>
+          <p><%= strip_tags(meetup_past_event.raw_data['description']).truncate(300) %></p>
+          <div class='orbit' role='region' aria-label="<%= meetup_past_event.raw_data['name'] %>" data-orbit>
+            <ul class='orbit-container'>
+              <button class='orbit-previous'><span class='show-for-sr'>Previous Slide</span>&#9664;&#xFE0E;</button>
+              <button class='orbit-next'><span class='show-for-sr'>Next Slide</span>&#9654;&#xFE0E;</button>
+              <% @meetup_event_photos[meetup_past_event.raw_data['id']].each do |meetup_event_photo| %>
+                <li class='is-active orbit-slide'>
+                  <%= image_tag meetup_event_photo.photo_link, class: 'orbit-image' %>
+                  <% if meetup_event_photo.caption.present? %>
+                    <figcaption class='orbit-caption'><%= meetup_event_photo.caption %></figcaption>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <br>
+          <% meetup_past_event.presentation_embeds.each do |presentation_embed| %>
+            <div class='flex-video'>
+              <%= presentation_embed.html_safe %>
+            </div>
+          <% end %>
+          <% if meetup_past_event.links.present? %>
+            <h5>Resources</h5>
+            <ul>
+              <% meetup_past_event.links.each do |link| %>
+                <li><%= link_to link, target: :_blank %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </article>
+      <% end %>
+    <% end %>
   </div>
 </section>

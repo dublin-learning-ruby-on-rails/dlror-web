@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'imports/fonts';
+@import 'util/util';
 
 $header-bg-color: #dd6666;
 
@@ -35,10 +36,19 @@ $events-bg-color: lighten($header-bg-color, 32%);
 $aspirants-bg-color: lighten($header-bg-color, 36%);
 
 #menu {
+  z-index: 1;
   background: $about-bg-color;
+
+  > div[data-sticky-container] {
+    z-index: 100;
+  }
 
   a {
     color: #655;
+    &.active {
+      color: #944;
+      // text-shadow: 2px 2px rgba(0,0,0,0.1); // still undecided if better with text-shadow
+    }
   }
 
   .title-container {
@@ -68,7 +78,6 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
   top: -5.9rem;
   position: relative;
   padding-top: 5.9rem;
-  z-index: -1;
 }
 
 #about-container {
@@ -77,11 +86,77 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 }
 
 #events-container {
-  height: 100vh;
+  // height: 100vh;
   background: $events-bg-color;
+
+  article {
+    background-color: white;
+    border-radius: 2px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    .orbit-container {
+      text-align: center;
+      background-color: rgba(10, 10, 10, 0.5);
+
+      @media #{$medium-up} {
+        .orbit-slide img {
+          height: 50vh;
+          width: auto;
+        }
+      }
+    }
+  }
 }
 
 #aspirants-container {
   height: 100vh;
   background: $aspirants-bg-color;
+
+  img.aspirant-thumb {
+    border: 1px solid #eee;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 2px;
+    margin: 0.5rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1)
+  }
+}
+
+
+@media #{$small-only} {
+  header {
+    height: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    #header-image {
+      width: 50%;
+    }
+
+    #header-title {
+      font-size: 2rem;
+      margin: 0;
+    }
+  }
+
+  .sticky-container {
+    display: block !important;
+  }
+
+  #about-container, #events-container, #aspirants-container {
+    padding-top: 1rem;
+    top: 0;
+  }
+
+  .orbit-slide img {
+    height: 30vh;
+    width: auto;
+  }
+
+  #events-container {
+    article {
+      padding: 1.0rem;
+    }
+  }
 }
