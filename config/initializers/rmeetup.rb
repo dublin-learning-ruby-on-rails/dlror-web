@@ -1,4 +1,4 @@
-require 'rMeetup'
+require 'rmeetup'
 
 rmeetup_config = YAML::load(File.open("#{ Rails.root }/config/meetup.yml"))[Rails.env]
 
