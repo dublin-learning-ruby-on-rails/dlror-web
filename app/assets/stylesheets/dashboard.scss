@@ -7,7 +7,7 @@
 $header-bg-color: #dd6666;
 
 header {
-  height: 50%;
+  height: 50vh;
   background-color: $header-bg-color;
   text-align: center;
 
@@ -30,26 +30,58 @@ header {
   }
 }
 
-$about-bg-color: lighten($header-bg-color, 25%);
-
-#menu, #about-container {
-  background: $about-bg-color;
-  color: #655;
-}
+$about-bg-color: lighten($header-bg-color, 28%);
+$events-bg-color: lighten($header-bg-color, 32%);
+$aspirants-bg-color: lighten($header-bg-color, 36%);
 
 #menu {
+  background: $about-bg-color;
+
+  a {
+    color: #655;
+  }
+
   .title-container {
     padding: 1rem;
     top: -1rem;
     left: -1rem;
     position: relative;
-    background-color: $about-bg-color;
     display: inline-block;
     border-radius: 0.5rem;
   }
+
+  #link-to-about-container {
+    background-color: $about-bg-color;
+  }
+
+  #link-to-events-container {
+    background-color: $events-bg-color;
+  }
+
+  #link-to-aspirants-container {
+    background-color: $aspirants-bg-color;
+  }
+}
+
+#about-container, #events-container, #aspirants-container {
+  font-size: 1.2em;
+  top: -5.9rem;
+  position: relative;
+  padding-top: 5.9rem;
+  z-index: -1;
 }
 
 #about-container {
-  height: 50%;
-  font-size: 1.2em;
+  height: 50vh;
+  background: $about-bg-color;
+}
+
+#events-container {
+  height: 100vh;
+  background: $events-bg-color;
+}
+
+#aspirants-container {
+  height: 100vh;
+  background: $aspirants-bg-color;
 }

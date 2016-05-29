@@ -8,14 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <%= render 'header' %>
-  <%= render 'menu' %>
-  <%= render 'about' %>
   <body>
+    <%= render 'flash' %>
+    <%= render 'header' %>
     <div id='container'>
-      <%= render partial: 'flash' %>
       <%= yield %>
     </div>
+    <%= render 'footer' %>
   </body>
-  <%= render 'footer' %>
 </html>

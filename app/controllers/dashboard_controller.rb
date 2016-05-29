@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
-  before_action :synchronise_events, only: :index
-  before_action :set_events, only: :index
-  before_action :set_posts, only: :index
+  # before_action :synchronise_events, only: :index
+  # before_action :set_events, only: :index
+  # before_action :set_posts, only: :index
 
   def index
     render layout: 'dashboard'

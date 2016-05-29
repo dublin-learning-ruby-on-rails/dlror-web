@@ -1,7 +1,17 @@
 <nav id='menu'>
-  <div class='medium-8 columns row'>
-    <h2 class='title-container'>
-      About
-    </h2>
+  <div data-sticky-container>
+    <div class='sticky full-width' data-sticky data-anchor='container'>
+      <div class='medium-8 columns row' data-magellan>
+        <%= link_to '#about-container', class: 'title-container', id: 'link-to-about-container' do %>
+          <h2>About</h2>
+        <% end %>
+        <%= link_to '#events-container', class: 'title-container', id: 'link-to-events-container' do %>
+          <h2>Events</h2>
+        <% end %>
+        <%= link_to '#aspirants-container', class: 'title-container', id: 'link-to-aspirants-container' do %>
+          <h2>Aspirants</h2>
+        <% end %>
+      </div>
+    </div>
   </div>
 </nav>
