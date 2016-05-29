@@ -12,7 +12,6 @@ class DashboardController < ApplicationController
   private
 
   def synchronise_events
-    # synchronise_events
     results = RMeetup_client.fetch(:events, status: ['upcoming', 'past'], group_id: Rails.application.config.meetup_group_id)
 
     results.each do |result|

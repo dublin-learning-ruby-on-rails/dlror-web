@@ -60,6 +60,8 @@ group :development do
   gem 'spring'
 
   gem 'guard-rspec', require: false
+
+  gem 'capistrano'
 end
 
 group :test do
