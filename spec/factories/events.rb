@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :event do
-    meetup_id "MyString"
-    presentation_embeds "MyString"
-    links "MyString"
+    sequence(:meetup_id) { |n| n }
+    presentation_embeds ['<iframe>...</iframe>']
+    links ['http:/localhost:3000/somefile.pdf']
   end
 end
