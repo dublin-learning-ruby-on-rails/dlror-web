@@ -152,6 +152,10 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
     #menu {
       position: relative;
       height: 2.9rem;
+
+      .title-container {
+        padding: 0.5rem;
+      }
     }
 
     .sticky-container {
