@@ -90,7 +90,7 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
   }
 
   #about-container {
-    height: 50vh;
+    min-height: 50vh;
     background: $about-bg-color;
   }
 
@@ -119,6 +119,7 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 
   #aspirants-container {
     background: $aspirants-bg-color;
+    text-align: center;
 
     img.aspirant-thumb {
       border: 1px solid #eee;

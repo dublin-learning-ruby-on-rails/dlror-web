@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  before_action :set_links, only: :index
   before_action :synchronise_events, only: :index
   before_action :set_events, only: :index
   before_action :set_event_photos, only: :index
@@ -10,6 +11,11 @@ class DashboardController < ApplicationController
   end
 
   private
+
+  def set_links
+    @meetup_group_link = 'http://www.meetup.com/Dublin-Learning-Ruby-on-Rails-meetup/'
+    @git_repo_link = 'https://github.com/dublin-learning-ruby-on-rails'
+  end
 
   def synchronise_events
     results = RMeetup_client.fetch(:events, status: ['upcoming', 'past'], group_id: Rails.application.config.meetup_group_id)

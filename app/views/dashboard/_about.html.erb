@@ -9,7 +9,12 @@
       <li>Make new friends! :)</li>
       <li>Share and collaborate potential ideas</li>
       <li>Opportunity to discuss emerging technologies</li>
-      <li>Personal motivation for my passion to teach, and to improve my English :3</li>
     </ul>
+    <%= link_to @meetup_group_link, target: :_blank do %>
+      <h3>Meetup Group</h3>
+    <% end %>
+    <%= link_to @git_repo_link, target: :_blank do %>
+      <h3>Materials Repo</h3>
+    <% end %>
   </div>
 </section>
