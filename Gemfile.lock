@@ -341,6 +341,7 @@ DEPENDENCIES
   mini_magick
   omniauth-meetup
   pg
+  puma
   rMeetup
   rails (= 4.2.6)
   redactor-rails
