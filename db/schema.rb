@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527162929) do
+ActiveRecord::Schema.define(version: 20160530110022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160527162929) do
   end
 
   add_index "events", ["meetup_id"], name: "index_events_on_meetup_id", using: :btree
+
+  create_table "events_sponsors", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "sponsor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "events_sponsors", ["event_id"], name: "index_events_sponsors_on_event_id", using: :btree
+  add_index "events_sponsors", ["sponsor_id"], name: "index_events_sponsors_on_sponsor_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -52,4 +62,14 @@ ActiveRecord::Schema.define(version: 20160527162929) do
   add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
   add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
 
+  create_table "sponsors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "events_sponsors", "events"
+  add_foreign_key "events_sponsors", "sponsors"
 end

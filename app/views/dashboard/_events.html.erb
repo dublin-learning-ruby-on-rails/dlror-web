@@ -41,6 +41,14 @@
               <% end %>
             </ul>
           <% end %>
+          <% if meetup_past_event.sponsors.present? %>
+            <h5>Sponsors</h5>
+            <ul class='no-ul-style'>
+              <% meetup_past_event.sponsors.each do |sponsor| %>
+                <li class='small-12 medium-8 large-6 small-centered'><%= link_to image_tag(sponsor.image), sponsor.link, target: :_blank %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </article>
       <% end %>
     <% end %>
