@@ -6,6 +6,7 @@
     <title><%= content_for?(:title) ? yield(:title) : 'Dublin Learning Ruby-on-Rails' %></title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag 'dublin-learning-ruby-on-rails-logo' %>
     <%= csrf_meta_tags %>
   </head>
   <%= render 'header' %>
