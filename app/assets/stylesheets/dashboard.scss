@@ -57,7 +57,7 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 
   .title-container {
     padding: 1rem;
-    top: -1rem;
+    margin-top: -1rem;
     left: -1rem;
     position: relative;
     display: inline-block;
@@ -135,8 +135,7 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 @media #{$small-only} {
   header {
     height: auto;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding-bottom: 2rem;
 
     #header-image {
       width: 50%;
@@ -155,6 +154,10 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 
       .title-container {
         padding: 0.5rem;
+
+        h2 {
+          margin: 0;
+        }
       }
     }
 
