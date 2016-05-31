@@ -9,12 +9,12 @@
     <%= favicon_link_tag 'dublin-learning-ruby-on-rails-logo' %>
     <%= csrf_meta_tags %>
   </head>
-  <%= render 'header' %>
-  <body>
-    <div id='container'>
+  <body id='application-layout'>
+    <%= render 'header' %>
+    <div id='container' class='small-12 medium-8 large-6 small-centered'>
       <%= render partial: 'flash' %>
       <%= yield %>
     </div>
+    <%= render 'footer' %>
   </body>
-  <%= render 'footer' %>
 </html>
