@@ -3,9 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'imports/fonts';
+@import 'imports/globals';
 @import 'util/util';
-
-$header-bg-color: #dd6666;
 
 header {
   height: 50vh;
@@ -92,6 +91,14 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
   #about-container {
     min-height: 50vh;
     background: $about-bg-color;
+
+    // fa = fontawesome icons
+    i.fa {
+      color: white;
+      background: $header-bg-color;
+      border-radius: 50%;
+      padding: 0.3rem;
+    }
   }
 
   #events-container {

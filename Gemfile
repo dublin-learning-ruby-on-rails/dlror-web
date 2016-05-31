@@ -42,6 +42,7 @@ gem 'rMeetup'
 gem 'foundation-rails'
 gem 'redactor-rails'
 gem 'simple_form'
+gem 'font-awesome-sass'
 
 gem 'puma'
 
