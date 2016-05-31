@@ -1,0 +1,22 @@
+<p>
+  <strong>Meetup:</strong>
+  <%= @event.meetup_id %>
+</p>
+<p>
+  <strong>Presentation embeds:</strong><br>
+  <% @event.presentation_embeds.each do |presentation_embed| %>
+    <p><code><%= presentation_embed %></code></p>
+  <% end %>
+</p>
+<p>
+  <strong>Links / Resources:</strong><br>
+  <% @event.links.each do |link| %>
+    <%= link %><br>
+  <% end %>
+</p>
+<p>
+  <strong>Raw data:</strong>
+  <pre><%= simple_format JSON.pretty_generate @event.raw_data %></pre>
+</p>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

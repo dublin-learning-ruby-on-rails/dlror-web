@@ -1,0 +1,22 @@
+<%= simple_form_for(@event, method: :patch) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.label :presentation_embeds %>
+    <% f.object.presentation_embeds.each do |presentation_embed| %>
+      <%= f.text_field :presentation_embeds, value: presentation_embed, multiple: true %>
+    <% end %>
+    <%= f.text_field :presentation_embeds, value: nil, multiple: true %>
+    <%= f.text_field :presentation_embeds, value: nil, multiple: true %>
+    <%= f.text_field :presentation_embeds, value: nil, multiple: true %>
+    <%= f.label :links, 'Links / Resources' %>
+    <% f.object.links.each do |link| %>
+      <%= f.text_field :links, value: link, multiple: true %>
+    <% end %>
+    <%= f.text_field :links, value: nil, multiple: true %>
+    <%= f.text_field :links, value: nil, multiple: true %>
+    <%= f.text_field :links, value: nil, multiple: true %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

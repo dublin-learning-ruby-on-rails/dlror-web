@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'dashboard/index'
-
   root 'dashboard#index'
+
+  controller :dashboard do
+    get '/dashboard' => :index, as: :dashboard_path
+  end
+
+  devise_for :users
+
   resources :posts
+  resources :events, except: [:new, :create, :destroy]
+
   mount RedactorRails::Engine => '/redactor_rails'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
