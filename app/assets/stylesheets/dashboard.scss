@@ -6,7 +6,7 @@
 @import 'imports/globals';
 @import 'util/util';
 
-header {
+body > header {
   height: 50vh;
   background-color: $header-bg-color;
   text-align: center;
@@ -104,6 +104,11 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
   #events-container {
     background: $events-bg-color;
 
+    // color of star icon
+    h3 i.fa {
+      color: #dd6666;
+    }
+
     article {
       background-color: white;
       border-radius: 2px;
@@ -140,7 +145,7 @@ $aspirants-bg-color: lighten($header-bg-color, 36%);
 }
 
 @media #{$small-only} {
-  header {
+  body > header {
     height: auto;
     padding-bottom: 2rem;
 

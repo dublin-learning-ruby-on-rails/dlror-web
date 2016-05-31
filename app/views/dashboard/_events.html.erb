@@ -2,16 +2,25 @@
   <div class='medium-8 columns row'>
     <h2 class='hide'>Events</h2>
     <% if @meetup_upcoming_events.present? %>
-      <h3>Upcoming Events</h3>
-      <p>
-        Learn Web Development using Ruby-on-Rails for free. Students, beginners, and professionals are all welcome. Study sessions will be casual, open, and unorthodox: should be efficient and fun! :3  
-      </p>
+      <h3 id='upcoming-events-title'><i class='fa fa-star-o' aria-hidden='true'></i> Upcoming Events</h3>
+      <% @meetup_upcoming_events.each do |meetup_upcoming_event| %>
+        <article>
+          <header>
+            <h4><%= link_to meetup_upcoming_event.raw_data['name'], meetup_upcoming_event.raw_data['event_url'], target: :_blank %></h4>
+            <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= distance_of_time_in_words_to_now(meetup_upcoming_event.time) %> from now</small>
+          </header>
+          <p><%= strip_tags(meetup_upcoming_event.raw_data['description']).truncate(300) %></p>
+        </article>
+      <% end %>
     <% end %>
     <% if @meetup_past_events.present? %>
-      <h3>Past Events</h3>
+      <h3 id='past-events-title'>Past Events</h3>
       <% @meetup_past_events.each do |meetup_past_event| %>
         <article>
-          <h4><%= link_to meetup_past_event.raw_data['name'], meetup_past_event.raw_data['event_url'], target: :_blank %></h4>
+          <header>
+            <h4><%= link_to meetup_past_event.raw_data['name'], meetup_past_event.raw_data['event_url'], target: :_blank %></h4>
+            <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_ago_in_words(meetup_past_event.time) %> from now</small>
+          </header>
           <p><%= strip_tags(meetup_past_event.raw_data['description']).truncate(300) %></p>
           <div class='orbit' role='region' aria-label="<%= meetup_past_event.raw_data['name'] %>" data-orbit>
             <ul class='orbit-container'>
