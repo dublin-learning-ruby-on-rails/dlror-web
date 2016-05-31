@@ -19,7 +19,7 @@
         <article>
           <header>
             <h4><%= link_to meetup_past_event.raw_data['name'], meetup_past_event.raw_data['event_url'], target: :_blank %></h4>
-            <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_ago_in_words(meetup_past_event.time) %> from now</small>
+            <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_ago_in_words(meetup_past_event.time) %> ago</small>
           </header>
           <p><%= strip_tags(meetup_past_event.raw_data['description']).truncate(300) %></p>
           <div class='orbit' role='region' aria-label="<%= meetup_past_event.raw_data['name'] %>" data-orbit>
