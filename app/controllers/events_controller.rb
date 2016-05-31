@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_event, only: [:show, :edit, :update]
 
   # GET /events
@@ -39,6 +41,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(presentation_embeds: [], links: [])
+    params.require(:event).permit(presentation_embeds: [], links: [], sponsor_ids: [])
   end
 end

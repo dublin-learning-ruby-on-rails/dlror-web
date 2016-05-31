@@ -7,6 +7,8 @@ class Ability
     # Currently all users are only admins
     if user.persisted?
       can :manage, Post
+      can :manage, Event
+      can :manage, Sponsor
     end
   end
 end

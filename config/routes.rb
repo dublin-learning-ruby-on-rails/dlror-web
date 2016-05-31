@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :events, except: [:new, :create, :destroy]
+  resources :sponsors
 
   mount RedactorRails::Engine => '/redactor_rails'
   # The priority is based upon order of creation: first created -> highest priority.

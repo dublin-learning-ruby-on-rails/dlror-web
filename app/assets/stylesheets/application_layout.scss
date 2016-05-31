@@ -8,4 +8,9 @@ body#application-layout {
     background-color: white;
     border-radius: 2px;
   }
+
+  div.input.error {
+    background-color: #fee;
+    margin-bottom: 1rem;
+  }
 }

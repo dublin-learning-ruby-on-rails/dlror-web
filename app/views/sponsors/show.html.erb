@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @sponsor.name %>
+</p>
+<p>
+  <strong>Link:</strong>
+  <%= @sponsor.link %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @sponsor.image %>
+</p>
+<p>
+  <strong>Events:</strong>
+  <ul>
+    <% @sponsor.events.each do |event| %>
+      <li><%= link_to event.raw_data['name'], event %></li>
+    <% end %>
+  </ul>
+</p>
+<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
+<%= link_to 'Back', sponsors_path %>

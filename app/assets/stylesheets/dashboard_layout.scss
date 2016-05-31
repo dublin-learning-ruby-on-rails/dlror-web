@@ -128,6 +128,12 @@ body#dashboard-layout {
             }
           }
         }
+
+        ul.sponsors-container {
+          li:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+        }
       }
     }
 

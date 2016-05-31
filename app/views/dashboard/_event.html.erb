@@ -36,7 +36,7 @@
   <% end %>
   <% if meetup_event.sponsors.present? %>
     <h5>Sponsors</h5>
-    <ul class='no-ul-style'>
+    <ul class='no-ul-style sponsors-container'>
       <% meetup_event.sponsors.each do |sponsor| %>
         <li class='small-12 medium-8 large-6 small-centered'><%= link_to image_tag(sponsor.image), sponsor.link, target: :_blank %></li>
       <% end %>

@@ -1,6 +1,7 @@
 <%= simple_form_for(@event, method: :patch) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
+    <%= f.association :sponsors, as: :check_boxes %>
     <%= f.label :presentation_embeds %>
     <% f.object.presentation_embeds.each do |presentation_embed| %>
       <%= f.text_field :presentation_embeds, value: presentation_embed, multiple: true %>

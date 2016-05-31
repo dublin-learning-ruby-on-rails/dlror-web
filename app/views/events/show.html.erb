@@ -1,6 +1,6 @@
 <p>
   <strong>Meetup:</strong>
-  <%= @event.meetup_id %>
+  <%= @event.raw_data['name'] %>
 </p>
 <p>
   <strong>Presentation embeds:</strong><br>
@@ -13,6 +13,14 @@
   <% @event.links.each do |link| %>
     <%= link %><br>
   <% end %>
+</p>
+<p>
+  <strong>Sponsors:</strong>
+  <ul>
+    <% @event.sponsors.each do |sponsor| %>
+      <li><%= link_to sponsor.name, sponsor %></li>
+    <% end %>
+  </ul>
 </p>
 <p>
   <strong>Raw data:</strong>
