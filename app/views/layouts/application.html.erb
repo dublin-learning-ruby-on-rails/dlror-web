@@ -12,7 +12,7 @@
   <body id='application-layout'>
     <%= render 'flash' %>
     <div id='container' class='small-12 medium-8 large-6 small-centered'>
-      <%= render 'menu' %>
+      <%= render 'menu' if user_signed_in? %>
       <%= yield %>
     </div>
   </body>
