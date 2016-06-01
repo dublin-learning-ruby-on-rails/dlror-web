@@ -39,6 +39,7 @@ gem 'cancancan', '~> 1.10'
 gem 'omniauth-meetup'
 gem 'rMeetup'
 gem 'sidekiq'
+gem 'sidekiq-cron', '~> 0.4.0'
 gem 'sinatra', require: false
 
 gem 'foundation-rails'

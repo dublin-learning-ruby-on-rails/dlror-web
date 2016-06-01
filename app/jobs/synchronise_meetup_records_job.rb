@@ -83,3 +83,5 @@ class SynchroniseMeetupRecordsJob < ActiveJob::Base
     Member.where.not(id: synced_member_ids).destroy_all
   end
 end
+
+Sidekiq::Cron::Job.create(name: 'Synchronised Meetup Records - every 1 hour', cron: '0 * * * *', class: 'SynchroniseMeetupRecordsJob')
