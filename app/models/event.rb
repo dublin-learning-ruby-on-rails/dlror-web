@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :sponsors, through: :events_sponsors
   has_many :photos, dependent: :destroy
 
-  validates :meetup_id, presence: true
+  validates :meetup_id, presence: true, uniqueness: true
 
   before_save :remove_blank_links_and_presentation_embeds
 
