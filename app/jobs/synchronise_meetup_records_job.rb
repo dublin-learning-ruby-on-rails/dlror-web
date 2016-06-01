@@ -47,7 +47,7 @@ class SynchroniseMeetupRecordsJob < ActiveJob::Base
       results.each do |result|
         result_hash = result.as_json
 
-        photo = event.photos.where(meetup_id: result.id).first_or_initialize
+        photo = event.photos.where(meetup_id: result.photo_id).first_or_initialize
         if photo.raw_data['updated'] != result_hash['photo']['updated']
           photo.raw_data = result_hash['photo']
         end
@@ -65,7 +65,7 @@ class SynchroniseMeetupRecordsJob < ActiveJob::Base
   def synchronise_members
     synced_member_ids = []
     meetup_group_id = Rails.application.config.meetup_group_id
-    results = RMeetup_client.fetch(:members, group_id: meetup_group_id).shuffle
+    results = RMeetup_client.fetch(:members, group_id: meetup_group_id)
 
     results.each do |result|
       result_hash = result.as_json
