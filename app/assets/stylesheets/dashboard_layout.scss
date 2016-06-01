@@ -9,7 +9,7 @@
 body#dashboard-layout {
   
   > header {
-    height: 50vh;
+    height: 40vh;
     background-color: $header-bg-color;
     text-align: center;
 
@@ -91,7 +91,7 @@ body#dashboard-layout {
     }
 
     #about-container {
-      min-height: 50vh;
+      min-height: 60vh;
       background: $about-bg-color;
 
       // fa = fontawesome icons
