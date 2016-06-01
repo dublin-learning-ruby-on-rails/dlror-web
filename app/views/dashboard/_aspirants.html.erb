@@ -1,9 +1,9 @@
 <section id='aspirants-container' data-magellan-target='aspirants-container'>
   <div class='medium-8 columns row'>
     <h2 class='hide'>Aspirants</h2>
-    <p>We are <strong><%= @meetup_members.count %> Aspirants!</strong> :)</p>
-    <% @meetup_members.each do |meetup_member| %>
-      <%= image_tag meetup_member.photo['thumb_link'], class: 'aspirant-thumb' if meetup_member.photo.present? %>
+    <p>We are <strong><%= @members.count %> Aspirants!</strong> :)</p>
+    <% @members.each do |member| %>
+      <%= image_tag member.raw_data['photo']['thumb_link'], class: 'aspirant-thumb' if member.raw_data['photo'].present? %>
     <% end %>
   </div>
 </section>

@@ -1,16 +1,16 @@
 <section id='events-container' data-magellan-target='events-container'>
   <div class='medium-8 columns row'>
     <h2 class='hide'>Events</h2>
-    <% if @meetup_upcoming_events.present? %>
+    <% if @upcoming_events.present? %>
       <h3 id='upcoming-events-title'><i class='fa fa-star-o' aria-hidden='true'></i> Upcoming Events</h3>
-      <% @meetup_upcoming_events.each do |meetup_upcoming_event| %>
-        <%= render 'event', meetup_event: meetup_upcoming_event %>
+      <% @upcoming_events.each do |upcoming_event| %>
+        <%= render 'event', event: upcoming_event %>
       <% end %>
     <% end %>
-    <% if @meetup_past_events.present? %>
+    <% if @past_events.present? %>
       <h3 id='past-events-title'>Past Events</h3>
-      <% @meetup_past_events.each do |meetup_past_event| %>
-        <%= render 'event', meetup_event: meetup_past_event %>
+      <% @past_events.each do |past_event| %>
+        <%= render 'event', event: past_event %>
       <% end %>
     <% end %>
   </div>

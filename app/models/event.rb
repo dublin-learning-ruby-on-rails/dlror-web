@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
-  has_many :events_sponsors
+  has_many :events_sponsors, dependent: :destroy
   has_many :sponsors, through: :events_sponsors
+  has_many :photos, dependent: :destroy
 
   validates :meetup_id, presence: true
 

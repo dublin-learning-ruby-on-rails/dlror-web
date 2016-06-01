@@ -38,6 +38,8 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'omniauth-meetup'
 gem 'rMeetup'
+gem 'sidekiq'
+gem 'sinatra', require: false
 
 gem 'foundation-rails'
 gem 'redactor-rails'
@@ -74,6 +76,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
   # gem 'capistrano3-nginx', '~> 2.0'
 end
 

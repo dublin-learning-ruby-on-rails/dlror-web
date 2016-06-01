@@ -1,5 +1,5 @@
 class Sponsor < ActiveRecord::Base
-  has_many :events_sponsors
+  has_many :events_sponsors, dependent: :destroy
   has_many :events, through: :events_sponsors
 
   validates :name, presence: true, uniqueness: true

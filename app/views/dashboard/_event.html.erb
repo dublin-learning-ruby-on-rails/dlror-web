@@ -1,43 +1,43 @@
 <article>
   <header>
-    <h4><%= link_to meetup_event.raw_data['name'], meetup_event.raw_data['event_url'], target: :_blank %></h4>
-    <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_in_relative_words(meetup_event.time) %></small>
+    <h4><%= link_to event.raw_data['name'], event.raw_data['event_url'], target: :_blank %></h4>
+    <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_in_relative_words(event.time) %></small>
   </header>
-  <p><%= strip_tags(meetup_event.raw_data['description']).truncate(300) %></p>
-  <% if @meetup_event_photos[meetup_event.raw_data['id']].present? %>
-    <div class='orbit' role='region' aria-label="<%= meetup_event.raw_data['name'] %>" data-orbit>
+  <p><%= strip_tags(event.raw_data['description']).truncate(300) %></p>
+  <% if event.photos.present? %>
+    <div class='orbit' role='region' aria-label="<%= event.raw_data['name'] %>" data-orbit>
       <ul class='orbit-container'>
         <button class='orbit-previous'><span class='show-for-sr'>Previous Slide</span>&#9664;&#xFE0E;</button>
         <button class='orbit-next'><span class='show-for-sr'>Next Slide</span>&#9654;&#xFE0E;</button>
-        <% @meetup_event_photos[meetup_event.raw_data['id']].each do |meetup_event_photo| %>
+        <% event.photos.each do |photo| %>
           <li class='is-active orbit-slide'>
-            <%= image_tag meetup_event_photo.photo_link, class: 'orbit-image' %>
-            <% if meetup_event_photo.caption.present? %>
-              <figcaption class='orbit-caption'><%= meetup_event_photo.caption %></figcaption>
+            <%= image_tag photo.raw_data['photo_link'], class: 'orbit-image' %>
+            <% if photo.raw_data['caption'].present? %>
+              <figcaption class='orbit-caption'><%= photo.raw_data['caption'] %></figcaption>
             <% end %>
           </li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <% meetup_event.presentation_embeds.each do |presentation_embed| %>
+  <% event.presentation_embeds.each do |presentation_embed| %>
     <br>
     <div class='flex-video'>
       <%= presentation_embed.html_safe %>
     </div>
   <% end %>
-  <% if meetup_event.links.present? %>
+  <% if event.links.present? %>
     <h5>Resources</h5>
     <ul>
-      <% meetup_event.links.each do |link| %>
+      <% event.links.each do |link| %>
         <li><%= link_to link, link, target: :_blank %></li>
       <% end %>
     </ul>
   <% end %>
-  <% if meetup_event.sponsors.present? %>
+  <% if event.sponsors.present? %>
     <h5>Sponsors</h5>
     <ul class='no-ul-style sponsors-container'>
-      <% meetup_event.sponsors.each do |sponsor| %>
+      <% event.sponsors.each do |sponsor| %>
         <li class='small-12 medium-8 large-6 small-centered'><%= link_to image_tag(sponsor.image), sponsor.link, target: :_blank %></li>
       <% end %>
     </ul>
