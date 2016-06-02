@@ -21,6 +21,7 @@ public/uploads
 config/database.yml
 config/meetup.yml
 config/secrets.yml
+config/delayed_job.yml
 
 .ruby-version
 .DS_Store

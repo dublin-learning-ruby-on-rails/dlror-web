@@ -1,0 +1,9 @@
+staging:
+  web:
+    username: 'username'
+    password: 'password'
+
+production:
+  web:
+    username: 'username'
+    password: 'password'

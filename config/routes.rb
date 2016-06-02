@@ -1,5 +1,3 @@
-require 'sidekiq/web'
-
 Rails.application.routes.draw do
   root 'dashboard#index'
 
@@ -15,9 +13,7 @@ Rails.application.routes.draw do
 
   mount RedactorRails::Engine => '/redactor_rails'
 
-  authenticate :user do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  match '/delayed_job' => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

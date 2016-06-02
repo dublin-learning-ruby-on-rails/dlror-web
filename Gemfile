@@ -39,7 +39,9 @@ gem 'cancancan', '~> 1.10'
 gem 'omniauth-meetup'
 gem 'rMeetup'
 gem 'delayed_job_active_record'
+gem 'delayed_job_web'
 gem 'delayed_cron_job'
+# gem 'sinatra', require: false
 
 gem 'foundation-rails'
 gem 'redactor-rails'
