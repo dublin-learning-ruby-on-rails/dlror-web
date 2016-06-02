@@ -406,6 +406,7 @@ DEPENDENCIES
   puma
   rMeetup
   rails (= 4.2.6)
+  rake
   redactor-rails
   rspec-collection_matchers
   rspec-rails (~> 3.4)
