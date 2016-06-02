@@ -101,6 +101,7 @@ GEM
     concurrent-ruby (1.0.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    daemons (1.2.3)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     delayed_cron_job (0.7.1)
@@ -386,6 +387,7 @@ DEPENDENCIES
   capistrano3-puma
   carrierwave
   coffee-rails (~> 4.1.0)
+  daemons
   database_cleaner
   delayed_cron_job
   delayed_job_active_record

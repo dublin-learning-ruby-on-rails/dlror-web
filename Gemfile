@@ -41,6 +41,7 @@ gem 'rMeetup'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'delayed_cron_job'
+gem 'daemons'
 # gem 'sinatra', require: false
 
 gem 'foundation-rails'
