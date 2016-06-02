@@ -5,7 +5,7 @@ Delayed::Worker.queue_attributes = {
   low_priority: { priority: 10 }
 }
 
-delayed_job_config = YAML::load(File.open("#{ Rails.root }/config/meetup.yml"))[Rails.env]
+delayed_job_config = YAML::load(File.open("#{ Rails.root }/config/delayed_job.yml"))[Rails.env]
 
 if Rails.env.staging? or Rails.env.production?
   DelayedJobWeb.use Rack::Auth::Basic do |username, password|
