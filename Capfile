@@ -22,7 +22,7 @@ require 'capistrano/rails'
 require 'capistrano/rbenv'
 require 'capistrano/puma'
 
-require 'capistrano/sidekiq'
+require 'capistrano/delayed_job'
 
 # require 'capistrano/nginx'
 # require 'capistrano/chruby'
