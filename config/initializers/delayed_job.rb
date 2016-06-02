@@ -1,3 +1,4 @@
+Delayed::Worker.logger = Logger.new(File.join(Rails.root, 'log', 'delayed_job.log'))
 Delayed::Worker.queue_attributes = {
   high_priority: { priority: -10 },
   default: { priority: 0 },

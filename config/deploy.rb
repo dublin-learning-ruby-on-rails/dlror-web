@@ -6,8 +6,6 @@ set :repo_url, 'git@github.com:dublin-learning-ruby-on-rails/dlror-web.git'
 
 set :user, 'deploy'
 
-set :rails_env, 'production'
-
 set :deploy_via, :copy
 
 set :rbenv_ruby, '2.3.0'
