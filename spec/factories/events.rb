@@ -6,7 +6,7 @@ FactoryGirl.define do
     raw_data {
       {
         'id' => self.meetup_id,
-        'name' => 'Learn Ruby-on-Rails Basics',
+        'name' => Faker::Lorem.sentence,
         'time' => DateTime.now.strftime('%Q'),
         'group' => {
           'id' => 1,
