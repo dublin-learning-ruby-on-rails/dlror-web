@@ -9,6 +9,7 @@ before_script:
 - cp config/delayed_job.yml.sample config/delayed_job.yml
 - cp config/meetup.yml.sample config/meetup.yml
 - cp config/secrets.yml.sample config/secrets.yml
+- bundle exec rake db:create
 env:
   global:
   - secure: DHlQO6NzHxfB0c21bv2bUo+sdlBK+sII2Yj7ExFhCF5KXxOQFfFDmEYTzVzLEBL0xzPZa2KEvK2cGP2zLU7/pWSVhnCPrmwYlXSgQVybD+jHN4ojLcDwfYwHT51XU3llxBTiy/AfjwkrpiI/84dbRzx2/H/IYO2PxiykyyOF1pvxesWTN2BWgnZWU0s/yDGGPeURsQJtfGyuhU/3VvmSTMfFTAo3wVG4uqEnlI1aoFKsLNYzyB3+tAggcogoeMJafx//UYc5V4NjpPPAPiawhT3NoKxu2Pag97EYsBWowXAh7Qjl1ITGC5cRKXA8OoxP/CeTvnHNXtYQBzunq0eUIoimZgEbuzWwNRCOmIkLYtMd6Xyrsjol6mksttJM6OExPswngdD0dAz5rqNjWk+W647IgvPoLTS4UJU0cGxW/UuAOqA1NKrKZYTQPNEnccnt8eaMybB/s5VVNeNlXq0ADX2K1UqX5JaUNa520TJ3W944S+Rr6vPNIeqhp8uMtamkrqXxtSs2cNhvcSnGZfznbUxaIVk8+tCslX/EIrfjzW/xXpGSYCwWb42tcXmZ4g/7Tpvzm4hTFdAptuzyt6CveORBSkokEhkTiYQTeuOm6kj5SS24wz23ufRV8UXOUXLIwVD82Tth9SaL2/QzCpXTknwiToiGPqYopIbCzcK3IgA=
