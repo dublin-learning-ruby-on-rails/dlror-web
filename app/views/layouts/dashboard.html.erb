@@ -3,8 +3,6 @@
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <%= stylesheet_link_tag    'application', defer: true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: true %>
     <%= favicon_link_tag 'dublin-learning-ruby-on-rails-logo' %>
     <%= render 'meta_tags' %>
   </head>
@@ -16,5 +14,7 @@
       <%= yield %>
     </div>
     <%= render 'footer' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, async: true, defer: true %>
+    <%= stylesheet_link_tag    'application', async: true, defer: true %>
   </body>
 </html>
