@@ -5,3 +5,9 @@ rvm:
 
 addons:
   postgresql: '9.4'
+
+before_script:
+  - cp config/database.yml.sample config/database.yml
+  - cp config/delayed_job.yml.sample config/delayed_job.yml
+  - cp config/meetup.yml.sample config/meetup.yml
+  - cp config/screts.yml.sample config/secrets.yml

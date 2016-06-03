@@ -1,9 +1,9 @@
 staging:
   web:
-    username: 'username'
-    password: 'password'
+    username: '<%= ENV['DELAYED_JOB_WEB_USERNAME'] %>'
+    password: '<%= ENV['DELAYED_JOB_WEB_PASSWORD'] %>'
 
 production:
   web:
-    username: 'username'
-    password: 'password'
+    username: '<%= ENV['DELAYED_JOB_WEB_USERNAME'] %>'
+    password: '<%= ENV['DELAYED_JOB_WEB_PASSWORD'] %>'
