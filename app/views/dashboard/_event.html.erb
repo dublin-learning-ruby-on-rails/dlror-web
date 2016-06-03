@@ -1,6 +1,9 @@
 <article>
   <header>
     <h4><%= link_to event.raw_data['name'], event.raw_data['event_url'], target: :_blank %></h4>
+    <% if event.time.future? %>
+      <a href='http://www.meetup.com/Dublin-Learning-Ruby-on-Rails-Meetup/events/<%= event.raw_data['id'] %>/' data-event='<%= event.raw_data['id'] %>' class='mu-rsvp-btn'>RSVP</a>
+    <% end %>
     <small class='subheader'><i class='fa fa-calendar' aria-hidden='true'></i> <%= time_in_relative_words(event.time) %></small>
   </header>
   <p><%= strip_tags(event.raw_data['description']).truncate(300) %></p>

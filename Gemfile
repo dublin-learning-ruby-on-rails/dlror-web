@@ -48,6 +48,7 @@ gem 'foundation-rails'
 gem 'redactor-rails'
 gem 'simple_form'
 gem 'font-awesome-sass'
+gem 'meta-tags'
 
 gem 'puma'
 
