@@ -117,6 +117,10 @@ body#dashboard-layout {
         padding: 2rem;
         margin-bottom: 2rem;
 
+        > header {
+          margin-bottom: 0.5rem;
+        }
+
         .orbit-container {
           text-align: center;
           background-color: rgba(10, 10, 10, 0.5);
