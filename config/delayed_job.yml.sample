@@ -1,9 +1,16 @@
-staging:
+default: &default
   web:
     username: '<%= ENV['DELAYED_JOB_WEB_USERNAME'] %>'
     password: '<%= ENV['DELAYED_JOB_WEB_PASSWORD'] %>'
 
+development:
+  <<: *default
+
+test:
+  <<: *default
+  
+staging:
+  <<: *default
+
 production:
-  web:
-    username: '<%= ENV['DELAYED_JOB_WEB_USERNAME'] %>'
-    password: '<%= ENV['DELAYED_JOB_WEB_PASSWORD'] %>'
+  <<: *default

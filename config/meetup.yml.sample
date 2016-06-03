@@ -1,11 +1,12 @@
-test:
+default: &default
   api_key: '<%= ENV['MEETUP_API_KEY] %>'
   group_id: '<%= ENV['MEETUP_GROUP_ID] %>'
+
+test:
+  <<: *default
 
 development:
-  api_key: '<%= ENV['MEETUP_API_KEY] %>'
-  group_id: '<%= ENV['MEETUP_GROUP_ID] %>'
+  <<: *default
 
 production:
-  api_key: '<%= ENV['MEETUP_API_KEY] %>'
-  group_id: '<%= ENV['MEETUP_GROUP_ID] %>'
+  <<: *default
