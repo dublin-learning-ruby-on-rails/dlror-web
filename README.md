@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dublin-learning-ruby-on-rails/dlror-web.svg?branch=master)](https://travis-ci.org/dublin-learning-ruby-on-rails/dlror-web)
 
-This is the [official homepage](http://dublinlearningrubyonrails.org/) source code for the Meetup group [Dublin Learning Ruby-on-Rails Meetup](http://www.meetup.com/Dublin-Learning-Ruby-on-Rails-meetup/).
+Source code of the [official homepage](http://dublinlearningrubyonrails.org/) for the Meetup group [Dublin Learning Ruby-on-Rails Meetup](http://www.meetup.com/Dublin-Learning-Ruby-on-Rails-meetup/).
 
 
 # About
