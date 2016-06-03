@@ -3,11 +3,10 @@
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title><%= content_for?(:title) ? yield(:title) : 'Dublin Learning Ruby-on-Rails' %></title>
     <%= stylesheet_link_tag    'application', defer: true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, defer: true %>
     <%= favicon_link_tag 'dublin-learning-ruby-on-rails-logo' %>
-    <%= csrf_meta_tags %>
+    <%= render 'meta_tags' %>
   </head>
   <body id='dashboard-layout'>
     <%= render 'flash' %>

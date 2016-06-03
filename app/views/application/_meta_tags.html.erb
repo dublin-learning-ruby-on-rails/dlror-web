@@ -1,0 +1,24 @@
+<%
+meta_title = content_for?(:meta_title) ? yield(:meta_title) : 'Dublin Learning Ruby-on-Rails'
+meta_keywords = content_for?(:meta_keywords) ? yield(:meta_keywords) : %w(learn tutorial Ruby On Rails Dublin free meetup)
+meta_description = content_for?(:meta_description) ? yield(:meta_description) : 'Learn Ruby on Rails in Dublin for free'
+meta_image = content_for?(:meta_title) ? yield(:meta_title) : image_url('dublin-learning-ruby-on-rails-logo.png')
+%>
+<%= display_meta_tags site: meta_title,
+  description: meta_description,
+  og: {
+    title: meta_title,
+    type: 'article',
+    description: meta_description,
+    image: meta_image
+  },
+  twitter: {
+    card: 'summary',
+    title: meta_title,
+    description: meta_description,
+    image: {
+      src: meta_image
+    }
+  }
+%>
+<%= csrf_meta_tags %>
