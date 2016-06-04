@@ -81,6 +81,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
+  gem 'capistrano3-monit', require: false
   # gem 'capistrano3-nginx', '~> 2.0'
 end
 

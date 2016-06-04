@@ -24,6 +24,8 @@ require 'capistrano/puma'
 
 require 'capistrano/delayed_job'
 
+require 'capistrano/monit'
+
 # require 'capistrano/nginx'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler'
