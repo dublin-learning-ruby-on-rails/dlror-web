@@ -38,10 +38,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'omniauth-meetup'
 gem 'rMeetup'
-gem 'delayed_job_active_record'
-gem 'delayed_job_web'
-gem 'delayed_cron_job'
-gem 'daemons'
+gem 'whenever', require: false
 # gem 'sinatra', require: false
 
 gem 'foundation-rails'
@@ -80,8 +77,6 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
-  gem 'capistrano3-delayed-job', '~> 1.0'
-  gem 'capistrano3-monit', require: false
   # gem 'capistrano3-nginx', '~> 2.0'
 end
 

@@ -21,10 +21,7 @@ require 'capistrano/rails'
 
 require 'capistrano/rbenv'
 require 'capistrano/puma'
-
-require 'capistrano/delayed_job'
-
-require 'capistrano/monit'
+require 'whenever/capistrano'
 
 # require 'capistrano/nginx'
 # require 'capistrano/chruby'
