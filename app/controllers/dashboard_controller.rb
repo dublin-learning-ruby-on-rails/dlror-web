@@ -17,8 +17,8 @@ class DashboardController < ApplicationController
   end
 
   def set_events
-    @upcoming_events = Event.includes(:photos).where('raw_data @> ?', {status: 'upcoming'}.to_json)
-    @past_events = Event.includes(:photos).where('raw_data @> ?', {status: 'past'}.to_json)
+    @upcoming_events = Event.includes(:photos).where('raw_data @> ?', {status: 'upcoming'}.to_json).order("raw_data -> 'time' ASC")
+    @past_events = Event.includes(:photos).where('raw_data @> ?', {status: 'past'}.to_json).order("raw_data -> 'time' DESC")
   end
 
   def set_members
