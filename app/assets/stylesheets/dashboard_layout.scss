@@ -124,6 +124,7 @@ body#dashboard-layout {
         .orbit-container {
           text-align: center;
           background-color: rgba(10, 10, 10, 0.5);
+          margin-bottom: 2rem;
 
           @media #{$medium-up} {
             .orbit-slide img {
