@@ -21,7 +21,6 @@ require 'capistrano/rails'
 
 require 'capistrano/rbenv'
 require 'capistrano/puma'
-require 'whenever/capistrano'
 
 # require 'capistrano/nginx'
 # require 'capistrano/chruby'

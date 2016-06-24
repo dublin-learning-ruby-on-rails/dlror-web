@@ -38,8 +38,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'omniauth-meetup'
 gem 'rMeetup'
-gem 'whenever', require: false
-# gem 'sinatra', require: false
+gem 'rufus-scheduler'
 
 gem 'foundation-rails'
 gem 'redactor-rails'
